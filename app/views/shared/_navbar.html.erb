@@ -14,9 +14,35 @@
     <nav class="collapse navbar-collapse">
       <!-- Full Width Navbar -->
       <ul class="navbar-nav ml-auto hidden-md-down">
-        <li class="nav-item <%= active_class(courses_path) %>">
-          <%= link_to 'My courses', track_path(current_user.track_id, ref: 'homenav'), class: 'nav-link' %>
-        </li>
+
+        # this is williamyoum's edit:
+        # highlight the current track
+        <li class="nav-item dropdown js-dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Courses
+        </a>
+          <ul class="dropdown-menu dropdown-menu-right menu-options pb-0">
+            <li>
+              <%= link_to forum_link, class: 'drop-down-link accent', target: '_blank', rel: 'noreferrer' do %>
+                <span class="drop-down-logo fas"></span>FS RoR
+              <% end %>
+            </li>
+            <li>
+              <%= link_to chat_link, class: 'drop-down-link accent', target: '_blank', rel: 'noreferrer' do %>
+                <span class="drop-down-logo fas"></span>FS JS
+              <% end %>
+            </li>
+            <li>
+              <%= link_to chat_link, class: 'drop-down-link accent', target: '_blank', rel: 'noreferrer' do %>
+                <span class="drop-down-logo fas"></span>Front End Only
+              <% end %>
+            </li>
+        </ul>
+      </li>
+        # <li class="nav-item <%= active_class(courses_path) %>">
+        #   <%= link_to 'My courses', track_path(current_user.track_id, ref: 'homenav'), class: 'nav-link' %>
+        # </li>
+       # end of williamyoum edit
         <li class="nav-item dropdown js-dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Community
